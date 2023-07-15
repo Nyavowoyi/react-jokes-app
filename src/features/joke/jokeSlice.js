@@ -37,7 +37,7 @@ const jokeSlice = createSlice({
             // generate a random image when the request is fulfilled
             // I did this on the state because doing that in the JokeView or the Joke component would
             // have generated a different image and this might cause an issue with debugging :)
-            state.randImg = parseInt((1 + Math.random() * 12))
+            state.randImg = parseInt((Math.random() * 12))
             state.showGetStarted = false
         })
         builder.addCase(fetchJoke.rejected, (state, action) => {
